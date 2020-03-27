@@ -6,7 +6,8 @@ spec:
   containers:
   - image: wenshihao1993/reverseproxy
     name: reverseproxy
-    imagePullPolicy: Always          
+    imagePullPolicy: Always   
+    command: ['sh', '-c', 'sleep 3600']       
     resources:
       requests:
         memory: "64Mi"
@@ -17,4 +18,9 @@ spec:
     ports:
     - containerPort: 8080
   restartPolicy: Always
+  tolerations:
+  - key: "dedicated-app"
+    operator: "Equal"
+    value: "my-dedi-app-a"
+    effect: "NoSchedule"  
   

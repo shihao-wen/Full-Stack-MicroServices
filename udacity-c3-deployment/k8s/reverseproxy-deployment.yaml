@@ -3,13 +3,15 @@ kind: Deployment
 metadata:
   labels:
     service: reverseproxy
+    version: v2
   name: reverseproxy
 spec:
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
         service: reverseproxy
+        version: v2
     spec:
       containers:
       - image: wenshihao1993/reverseproxy
@@ -25,5 +27,3 @@ spec:
         ports:
         - containerPort: 8080
       restartPolicy: Always
-
-
