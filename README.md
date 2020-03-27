@@ -27,7 +27,9 @@ docker-compose down
 Converting each String manually, put into yaml file and create the secret.
 ```bash
 echo -n <String to convert> | base64
-kubectl apply -f ./secret.yaml
+kubectl apply -f ./env-configmap.yaml
+kubectl apply -f ./env-secret.yaml
+kubectl apply -f ./aws-secret.yaml
 ```
 Check the list of Secrets using 
 ```bash 
@@ -55,3 +57,4 @@ kubectl get pod -o wide
 # or
 kubectl describe pods <pod name>
 ```
+![pods](/images/Kubernetes_pod.png)
