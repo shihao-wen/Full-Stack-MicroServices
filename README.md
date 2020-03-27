@@ -58,3 +58,6 @@ kubectl get pod -o wide
 kubectl describe pods <pod name>
 ```
 ![pods](/images/Kubernetes_pod.png)
+```bash
+port-forward pod/<pod name> 8100:8100
+```
