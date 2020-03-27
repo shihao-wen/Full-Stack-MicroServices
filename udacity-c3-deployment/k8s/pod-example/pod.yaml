@@ -18,9 +18,4 @@ spec:
     ports:
     - containerPort: 8080
   restartPolicy: Always
-  tolerations:
-  - key: "dedicated-app"
-    operator: "Equal"
-    value: "my-dedi-app-a"
-    effect: "NoSchedule"  
   
