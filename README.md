@@ -17,7 +17,7 @@ docker-compose up
 docker-compose up -d 
 ```
 ![DockerHub](/images/DockerHub.png)
-After Verification: http://localhost:8100/
+After Verification: http://localhost:8100
 ```bash
 docker-compose stop
 docker-compose down
