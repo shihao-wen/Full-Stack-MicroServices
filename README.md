@@ -22,3 +22,29 @@ After Verification: http://localhost:8100/
 docker-compose stop
 docker-compose down
 ```
+
+## Kubernetes
+```bash
+kubectl apply -f reverseproxy-deployment.yaml
+kubectl get deployment
+kubectl get rs
+kubectl get pod
+```
+Deploy the Pods and ReplicaSets:
+```bash
+kubectl apply -f backend-feed-deployment.yaml 
+kubectl apply -f backend-user-deployment.yaml 
+kubectl apply -f frontend-deployment.yaml 
+kubectl apply -f reverseproxy-deployment.yaml
+kubectl apply -f pod-example/pod.yaml
+```
+Check the Status of Pods:
+```bash
+kubectl get pod -o wide
+```
+## Secret and Credentials
+Converting each String manually, put into yaml file and create the secret.
+```bash
+echo -n <String to convert> | base64
+kubectl apply -f ./secret.yaml
+```
