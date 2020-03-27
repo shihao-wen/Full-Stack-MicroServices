@@ -23,6 +23,17 @@ docker-compose stop
 docker-compose down
 ```
 
+## Secret and Credentials
+Converting each String manually, put into yaml file and create the secret.
+```bash
+echo -n <String to convert> | base64
+kubectl apply -f ./secret.yaml
+```
+Check the list of Secrets using 
+```bash 
+kubectl get secrets
+```
+
 ## Kubernetes
 ```bash
 kubectl apply -f reverseproxy-deployment.yaml
@@ -41,10 +52,6 @@ kubectl apply -f pod-example/pod.yaml
 Check the Status of Pods:
 ```bash
 kubectl get pod -o wide
-```
-## Secret and Credentials
-Converting each String manually, put into yaml file and create the secret.
-```bash
-echo -n <String to convert> | base64
-kubectl apply -f ./secret.yaml
+# or
+kubectl describe pods <pod name>
 ```
