@@ -6,7 +6,7 @@ metadata:
     version: v2
   name: reverseproxy
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
